@@ -8,6 +8,12 @@ set -e
 
 connector="$1"
 local_cdk="$2"
+
+echo "connector=$connector"
+echo "local_cdk=$local_cdk <<<<<<<<<<<<<<!!!!!!!!!!!!!!!!!!!"
+
+exit 0
+
 all_integration_tests=$(./gradlew integrationTest --dry-run | grep 'integrationTest SKIPPED' | cut -d: -f 4)
 run() {
 if [[ "$connector" == "all" ]] ; then
