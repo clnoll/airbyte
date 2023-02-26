@@ -37,8 +37,7 @@ jobs:
         run: true
   integration-test:
     timeout-minutes: 240
-    needs: start-test-runner
-    runs-on: ${{ needs.start-test-runner.outputs.label }}
+    runs-on: ubuntu-latest
     steps:
       - name: Test ${{ github.event.inputs.connector }}
         id: test
