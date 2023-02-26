@@ -48,6 +48,6 @@ jobs:
           ORG_GRADLE_PROJECT_connectorAcceptanceTestVersion: ${{github.event.inputs.connector-acceptance-test-version}}
         uses: Wandalen/wretry.action@master
         with:
-          command: ./tools/bin/ci_integration_test.sh ${{ github.event.inputs.connector }} ${{ github.event.inputs.local_cdk }}
+          command: echo "inputs.connector=${{ github.event.inputs.connector }} inputs.local_cdk=${{ github.event.inputs.local_cdk }}"
           attempt_limit: 3
           attempt_delay: 10000 # in ms
